@@ -15,6 +15,8 @@ import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 import { SearchTicketsComponent } from './search-tickets/search-tickets.component';
 
+import { RouterEffects } from './+state/router.effects';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -23,7 +25,7 @@ import { SearchTicketsComponent } from './search-tickets/search-tickets.componen
     FlexLayoutModule,
     TicketListViewRoutingModule,
     TicketsStateModule,
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([RouterEffects]),
     StoreRouterConnectingModule
   ],
   declarations: [TicketListComponent, TicketDetailsComponent, SearchTicketsComponent],
