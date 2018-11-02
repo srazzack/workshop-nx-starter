@@ -16,6 +16,7 @@ import { TicketDetailsComponent } from './ticket-details/ticket-details.componen
 import { SearchTicketsComponent } from './search-tickets/search-tickets.component';
 
 import { RouterEffects } from './+state/router.effects';
+import { UiMaterialModule } from '@tuskdesk-suite/ui-material';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { RouterEffects } from './+state/router.effects';
     ReactiveFormsModule,
     RouterModule,
     FlexLayoutModule,
+    UiMaterialModule,
     TicketListViewRoutingModule,
     TicketsStateModule,
     EffectsModule.forRoot([RouterEffects]),

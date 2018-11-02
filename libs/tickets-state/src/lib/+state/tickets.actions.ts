@@ -9,11 +9,15 @@ export enum TicketActionTypes {
   LOAD_TICKET = '[Tickets] Load Ticket by Id',
   ROUTER_LOAD_TICKET = '[Tickets] Router Navigation Load Ticket',
   LOAD_TICKET_DONE = '[Tickets] Ticket Loaded',
-  LOAD_TICKET_ERROR = '[Tickets] Error Loading Ticket by Id'
+  LOAD_TICKET_ERROR = '[Tickets] Error Loading Ticket by Id',
+
+  SELECT_TICKET = '[Tickets] Select Ticket by Id'
 }
+
 export class LoadTickets implements Action {
   type = TicketActionTypes.LOAD_ALL_TICKETS;
 }
+
 export class LoadTicketsError implements Action {
   type = TicketActionTypes.LOAD_ALL_TICKETS_ERROR;
   constructor(readonly error: any) {}
@@ -43,4 +47,15 @@ export class LoadTicketError implements Action {
   constructor(readonly error: any) {}
 }
 
-export type TicketsAction = LoadTickets | LoadTicketsDone | LoadTicketsError | LoadTicket | LoadTicketDone;
+export class SelectTicket implements Action {
+  type = TicketActionTypes.SELECT_TICKET;
+  constructor(readonly ticketId: number) {}
+}
+
+export type TicketsAction =
+  | LoadTickets
+  | LoadTicketsDone
+  | LoadTicketsError
+  | LoadTicket
+  | LoadTicketDone
+  | SelectTicket;

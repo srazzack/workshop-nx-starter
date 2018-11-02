@@ -4,7 +4,7 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 import { Effect, Actions } from '@ngrx/effects';
 import { DataPersistence } from '@nrwl/nx';
 
-import { LoadTickets, RouterLoadTicket } from '@tuskdesk-suite/tickets-state';
+import { LoadTickets, RouterLoadTicket, TicketsFacade } from '@tuskdesk-suite/tickets-state';
 import { TicketListComponent } from '../ticket-list/ticket-list.component';
 import { TicketDetailsComponent } from '@tuskdesk-suite/ticket-list-view/src/lib/ticket-details/ticket-details.component';
 
@@ -28,5 +28,5 @@ export class RouterEffects {
     }
   });
 
-  constructor(private actions: Actions, private d: DataPersistence<any>) {}
+  constructor(private d: DataPersistence<any>) {}
 }
